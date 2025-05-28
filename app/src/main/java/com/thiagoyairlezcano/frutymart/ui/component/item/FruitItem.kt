@@ -39,8 +39,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import com.thiagoyairlezcano.frutymart.domain.models.Fruit
 import coil.compose.AsyncImage
+import com.thiagoyairlezcano.frutymart.ui.theme.pastelGradient
 
 
 @Composable
@@ -48,7 +50,8 @@ fun FruitItem(fruit: Fruit) {
     val favorito = remember { mutableStateOf(false) }
 
     Box(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize()
+            .background(color = Color.White),
         contentAlignment = Alignment.Center
     ) {
 
@@ -63,6 +66,7 @@ fun FruitItem(fruit: Fruit) {
         ) {
             Box (
                 modifier = Modifier
+                    .background(brush = pastelGradient)
                     .fillMaxWidth()
                     .height(400.dp),
                 contentAlignment = Alignment.Center
